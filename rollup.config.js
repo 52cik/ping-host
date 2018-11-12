@@ -1,5 +1,5 @@
 import typescript from 'rollup-plugin-typescript';
-import { uglify } from "rollup-plugin-uglify";
+import { uglify } from 'rollup-plugin-uglify';
 import { name, version } from './package.json';
 
 const banner = `
@@ -10,7 +10,6 @@ const banner = `
  */
 `.trim();
 
-
 export default [
   {
     input: 'src/index.ts',
@@ -20,9 +19,7 @@ export default [
       name: 'ping',
       banner,
     },
-    plugins: [
-      typescript(),
-    ],
+    plugins: [typescript()],
   },
   {
     input: 'src/index.ts',
@@ -31,9 +28,6 @@ export default [
       format: 'umd',
       name: 'ping',
     },
-    plugins: [
-      typescript(),
-      uglify({ output: { preamble: banner } }),
-    ],
+    plugins: [typescript(), uglify({ output: { preamble: banner } })],
   },
 ];
