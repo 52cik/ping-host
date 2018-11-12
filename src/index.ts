@@ -1,23 +1,29 @@
 /**
- * ping 域名
- * @param host 域名
- * @param image 图片地址，默认图标
+ * ping host
+ * @param host host name
+ * @param image image url, default favicon.ico
  */
-function ping(host: string, timeout?: number): Promise<any>;
+function ping(host: string, timeout?: number): Promise<boolean>;
 
 /**
- * ping 域名
- * @param host 域名
- * @param image 图片地址，默认图标
- * @param timeout 超时(毫秒)
+ * ping host
+ * @param host host name
+ * @param image image url, default favicon.ico
+ * @param timeout timeout (ms)
  */
-function ping(host: string, image: string, timeout?: number): Promise<any>;
+function ping(host: string, image: string, timeout?: number): Promise<boolean>;
 
+/**
+ * ping host
+ * @param host host name
+ * @param image image url, default favicon.ico
+ * @param timeout timeout (ms)
+ */
 function ping(
   host: string,
   image: string | number = '/favicon.ico',
   timeout = 0,
-): Promise<any> {
+): Promise<boolean> {
   host = host.replace(/^(?!https?:\/\/)(\/\/)?/, 'http://').replace(/\/$/, '');
 
   if (typeof image === 'number') {
