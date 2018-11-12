@@ -1,5 +1,5 @@
 /*!
- * ping-host v1.0.0
+ * ping-host v1.0.1
  * (c) 2018-2018 楼教主 <fe.52cik@gmail.com> (https://github.com/52cik/ping-host)
  * Released under the MIT License.
  */
@@ -9,6 +9,12 @@
   (global.ping = factory());
 }(this, (function () { 'use strict';
 
+  /**
+   * ping host
+   * @param host host name
+   * @param image image url, default favicon.ico
+   * @param timeout timeout (ms)
+   */
   function ping(host, image, timeout) {
       if (image === void 0) { image = '/favicon.ico'; }
       if (timeout === void 0) { timeout = 0; }
