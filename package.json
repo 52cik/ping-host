@@ -1,8 +1,9 @@
 {
   "name": "ping-host",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Browser ping host tool.",
   "main": "ping.js",
+  "typings": "types/index.d.ts",
   "scripts": {
     "build": "rollup -c",
     "test": "echo \"Error: no test specified\" && exit 1"
